@@ -1,10 +1,16 @@
-FROM ubuntu:rolling
+FROM liuchong/rustup:nightly
 RUN apt-get update
-RUN apt-get install -y build-essential
-RUN apt-get install -y curl file git nodejs npm 
-RUN npm install -g @angular/cli
-RUN curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+RUN apt-get install -y build-essential libssl-dev curl git
 
+RUN apt-get install -y sudo bash gnupg
+
+RUN apt-get install -y pkg-config libssl-dev apt-utils nano
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+RUN apt-get install -y nodejs 
+
+RUN npm install -g @angular/cli
 
 RUN npm --version
 RUN git --version
