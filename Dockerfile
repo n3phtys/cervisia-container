@@ -24,7 +24,7 @@ WORKDIR /usr/cervisia/
 COPY startup.sh /usr/cervisia/
 COPY Settings.toml /.cervisia-server/
 
-RUN [“chmod”, “+x”, "/usr/cervisia/startup.sh"]
+RUN ["chmod", "+x", "/usr/cervisia/startup.sh"]
 
 EXPOSE 8080
 ENTRYPOINT  ["/usr/cervisia/startup.sh"]
