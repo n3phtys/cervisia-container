@@ -1,5 +1,5 @@
 top_items_per_user = 4 
-host = "localhost" 
+host = "0.0.0.0" 
 server_port = 8080 
 web_path = "/usr/cervisia/frontend"  
 use_persistence = false 
