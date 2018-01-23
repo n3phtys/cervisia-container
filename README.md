@@ -4,8 +4,10 @@
 
 run
 
-    docker run n3phtys/cervisia-container -p 8080:8080
+    docker run --name cervisia -p 8080:8080 n3phtys/cervisia-container
 
 to stop application 
 
-    docker ps -a -q  --filter ancestor=n3phtys/cervisia-container
+    docker stop cervisia
+    docker rm cervisia
+    
