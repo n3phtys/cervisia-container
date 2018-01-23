@@ -16,13 +16,13 @@ RUN npm --version
 RUN git --version
 RUN cargo --version
 
-WORKDIR /.cervisia-server/
+WORKDIR /root/.cervisia-server/
 WORKDIR /usr/cervisia/frontend/
 WORKDIR /usr/cervisia/backend/
 WORKDIR /usr/cervisia/
 
 COPY startup.sh /usr/cervisia/
-COPY Settings.toml /.cervisia-server/
+COPY Settings.toml /root/.cervisia-server/
 
 RUN ["chmod", "+x", "/usr/cervisia/startup.sh"]
 
