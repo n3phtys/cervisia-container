@@ -110,6 +110,8 @@ COPY --from=compiler /usr/cervisia /usr/cervisia
 
 RUN md5sum /usr/cervisia/backend/cervisia-server
 
+ENV CERVISIA_WEB_PATH /usr/cervisia/frontend/
+
 WORKDIR /db/
 WORKDIR /usr/cervisia/
 
