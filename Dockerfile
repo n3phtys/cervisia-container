@@ -1,5 +1,7 @@
 FROM ekidd/rust-musl-builder  AS compiler
 
+RUN echo "Will run musl-builder first to build frontend and backend, and copy artifacts into a final alpine image"
+
 USER root
 
 RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list
