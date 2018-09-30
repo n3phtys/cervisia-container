@@ -46,7 +46,7 @@ WORKDIR /usr/cervisia/frontend/
 WORKDIR /usr/cervisia/backend/
 WORKDIR /usr/cervisia/
 
-RUN git clone https://github.com/n3phtys/ng-cervisia --depth 1
+RUN git clone --recursive https://github.com/n3phtys/ng-cervisia
 WORKDIR /usr/cervisia/ng-cervisia
 RUN ls -la .
 RUN npm install
@@ -62,7 +62,7 @@ RUN rm -rf ng-cervisia
 
 WORKDIR /usr/cervisia/
 
-RUN git clone https://github.com/n3phtys/cervisia-server --depth 1
+RUN git clone --recursive https://github.com/n3phtys/cervisia-server
 
 RUN chown -R rust:rust cervisia-server
 
