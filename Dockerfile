@@ -4,11 +4,13 @@ RUN echo "Will run musl-builder first to build frontend and backend, and copy ar
 
 USER root
 
-RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list
+# RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list
 
-RUN echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list
+# RUN echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list
 
-RUN mkdir /var/lib/apt/lists/partial && apt-get update && apt-get install -y build-essential wget libssl-dev curl git bash gnupg apt-file pkg-config libssl-dev apt-utils nano && wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key| apt-key add - && apt-get update && apt-get install -y clang-6.0 lldb-6.0 lld-6.0
+# RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+
+RUN mkdir /var/lib/apt/lists/partial && apt-get update && apt-get install -y build-essential wget libssl-dev curl git bash gnupg apt-file pkg-config libssl-dev apt-utils nano && apt-get update && apt-get install -y clang-6.0 lldb-6.0 lld-6.0
 
 
 
