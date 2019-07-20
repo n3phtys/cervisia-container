@@ -103,7 +103,7 @@ RUN md5sum /usr/cervisia/backend/cervisia-server
 
 FROM alpine:latest
 
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN apk update && apk add ca-certificates curl && rm -rf /var/cache/apk/*
 RUN update-ca-certificates
 
 
