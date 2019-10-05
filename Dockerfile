@@ -50,7 +50,8 @@ WORKDIR /usr/cervisia/
 
 RUN git clone --recursive https://github.com/n3phtys/ng-cervisia
 WORKDIR /usr/cervisia/ng-cervisia
-RUN ls -la .
+RUN git log --pretty=medium > src/assets/git_log.txt
+RUN ls -la . && ls -la src && ls -la src/assets
 RUN npm install
 RUN ng build --prod
 #--base-href /bierliste-test/
