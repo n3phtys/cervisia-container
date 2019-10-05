@@ -50,7 +50,7 @@ WORKDIR /usr/cervisia/
 
 RUN git clone --recursive https://github.com/n3phtys/ng-cervisia
 WORKDIR /usr/cervisia/ng-cervisia
-RUN git log --pretty=medium > src/assets/git_log.txt
+RUN echo "export function gitLog() {   return \`" > src/app/git_log.ts && git log --pretty=medium | tr "\`$" _ >> src/app/git_log.ts && echo "\`};" >> src/app/git_log.ts
 RUN ls -la . && ls -la src && ls -la src/assets
 RUN npm install
 RUN ng build --prod
